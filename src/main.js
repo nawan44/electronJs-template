@@ -1,11 +1,39 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 const path = require("path");
+var isDev = require("electron-is-dev");
+const url = require("url");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
   app.quit();
 }
+let mainWindow;
 
+const mainMenuTemplate = [
+  // {
+  //   label: "File",
+  //   submenu: [
+  //     {
+  //       label: "Custom Undo",
+  //       role: "undo",
+  //     },
+  //   ],
+  // },
+  // {
+  //   label: "View",
+  //   submenu: [
+  //     {
+  //       role: "reload",
+  //     },
+  //   ],
+  // },
+];
+
+// Build menu from template
+const menu = Menu.buildFromTemplate(mainMenuTemplate);
+
+// Insert
+Menu.setApplicationMenu(menu);
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
@@ -17,6 +45,47 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   // mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+  // if (isDev) {
+  //   // In development
+  //   // modify existing menu
+  // } else {
+  //   // In production
+  //   // construct menu from scratch
+  //   var template = [
+  //     {
+  //       label: "File",
+  //       submenu: [
+  //         {
+  //           label: "Exit",
+  //           click: function () {
+  //             quit();
+  //           },
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       label: "Project",
+  //       submenu: [
+  //         {
+  //           label: "Delete",
+  //           click: function () {
+  //             deleteProject();
+  //           },
+  //         },
+  //         {
+  //           label: "Build",
+  //           click: function () {
+  //             buildProject();
+  //           },
+  //         },
+  //       ],
+  //     },
+  //   ];
+  //   // build menu from template
+  //   var menu = Menu.buildFromTemplate(template);
+  //   // set menu for main window
+  //   mainWindow.setMenu(menu);
+  // }
   mainWindow.loadURL("https://vercel.com/nawan44/bapenda-pajak-y8hm");
 
   // Open the DevTools.
