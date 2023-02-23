@@ -1,0 +1,10 @@
+======== Build Package ========
+
+electron-packager "./my-new-app" --platform=win32 --arch=x64 myApplicationBuilt --electron-version 1.0.0
+
+======== Change Package ========
+
+> > > Resource > app > package.json
+> > > "name": "electron_tutorial_app",
+
+node build.js
