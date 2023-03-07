@@ -8,3 +8,13 @@ electron-packager "./my-new-app" --platform=win32 --arch=x64 myApplicationBuilt 
 > > > "name": "electron_tutorial_app",
 
 node build.js
+
+======== DEBUG =============
+DEBUG=electron-windows-installer:main node build.js
+
+electron-windows-installer:main 001d:err:wineusb:DriverEntry Failed to initialize Unix library, status 0xc0000135.
+electron-windows-installer:main 001d:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\wineusb": c0000135
+electron-windows-installer:main 0016:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\nsiproxy": c0000135
+electron-windows-installer:main 0016:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\NDIS": 00000001
+electron-windows-installer:main +27m
+electron-windows-installer:main Fixing up paths
