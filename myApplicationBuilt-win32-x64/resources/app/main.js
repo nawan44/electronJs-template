@@ -146,7 +146,7 @@ const createWindow = () => {
   //   // set menu for main window
   //   mainWindow.setMenu(menu);
   // }
-  mainWindow.loadURL("https://vercel.com/nawan44/bapenda-pajak-y8hm");
+  mainWindow.loadURL("http://116.90.165.46");
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
